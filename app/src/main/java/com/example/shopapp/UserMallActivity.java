@@ -5,9 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class UserMallActivity extends AppCompatActivity {
     private Button btnLogout;
+    // 声明底部导航栏和 Fragment
+    private BottomNavigationView bottomNavigationView;
+    private ShopFragment shopFragment;
+    private CartFragment cartFragment;
+    private ProfileFragment profileFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,35 @@ public class UserMallActivity extends AppCompatActivity {
                 // 执行退出登录的逻辑
                 logout();
             }
+        });
+
+        // 初始化底部导航栏和 Fragment
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        shopFragment = new ShopFragment();
+        cartFragment = new CartFragment();
+        profileFragment = new ProfileFragment();
+
+        // 设置默认显示的 Fragment
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, shopFragment).commit();
+
+        // 监听底部导航栏点击事件
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.menu_mall) {
+                selectedFragment = shopFragment;
+            } else if (itemId == R.id.menu_cart) {
+                selectedFragment = cartFragment;
+            } else if (itemId == R.id.menu_profile) {
+                selectedFragment = profileFragment;
+            }
+
+            // 切换 Fragment
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, selectedFragment).commit();
+            return true;
         });
     }
 
