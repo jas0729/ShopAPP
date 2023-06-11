@@ -13,16 +13,16 @@
         android:theme="@style/Theme.ShopAPP"
         tools:targetApi="31">
         <activity
-            android:name=".UserMallActivity"
+            android:name=".user.UserMallActivity"
             android:exported="false" />
         <activity
-            android:name=".MerchantManagementActivity"
+            android:name=".merchant.MerchantManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".base.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".base.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

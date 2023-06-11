@@ -1,4 +1,4 @@
-package com.example.shopapp;
+package com.example.shopapp.dbtool;
 
 import android.content.ContentValues;
 import android.content.Context;

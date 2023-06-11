@@ -1,15 +1,19 @@
-package com.example.shopapp;
+package com.example.shopapp.base;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.shopapp.dbtool.DatabaseHelper;
+import com.example.shopapp.merchant.MerchantManagementActivity;
+import com.example.shopapp.R;
+import com.example.shopapp.user.UserMallActivity;
 
 public class MainActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;

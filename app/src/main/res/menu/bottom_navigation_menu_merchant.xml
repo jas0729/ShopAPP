@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_management"
+        android:title="管理商城"
+        android:icon="@drawable/ic_management"/>
+
+    <item
+        android:id="@+id/menu_profile_merchant"
+        android:title="个人中心"
+        android:icon="@drawable/ic_profile"/>
+</menu>

@@ -1,6 +1,5 @@
-package com.example.shopapp;
+package com.example.shopapp.base;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +8,9 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.shopapp.R;
+import com.example.shopapp.dbtool.DatabaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;
